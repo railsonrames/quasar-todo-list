@@ -1,9 +1,15 @@
 <template>
   <q-page class="bg-grey column">
     <q-list class="bg-white" separator bordered>
-      <q-item v-for="task in tasks" :key="task.title" v-ripple>
+      <q-item
+        v-for="task in tasks"
+        :key="task.title"
+        @click="task.done = !task.done"
+        clickable
+        v-ripple
+      >
         <q-item-section avatar>
-          <q-checkbox v-model="task.done" color="primary" />
+          <q-checkbox class="no-pointer-events" v-model="task.done" color="primary" />
         </q-item-section>
         <q-item-section>
           <q-item-label>{{ task.title }}</q-item-label>
