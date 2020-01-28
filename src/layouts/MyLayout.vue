@@ -24,36 +24,20 @@
         style="height: calc(100% - 192px); margin-top: 192px; border-right: 1px solid #ddd"
       >
         <q-list padding>
-          <q-item clickable v-ripple>
+          <q-item clickable v-ripple to="/" exact>
             <q-item-section avatar>
-              <q-icon name="inbox" />
+              <q-icon name="list" />
             </q-item-section>
 
-            <q-item-section>Inbox</q-item-section>
+            <q-item-section>Todo</q-item-section>
           </q-item>
 
-          <q-item active clickable v-ripple>
+          <q-item clickable v-ripple to="/help" exact>
             <q-item-section avatar>
-              <q-icon name="star" />
+              <q-icon name="help" />
             </q-item-section>
 
-            <q-item-section>Star</q-item-section>
-          </q-item>
-
-          <q-item clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon name="send" />
-            </q-item-section>
-
-            <q-item-section>Send</q-item-section>
-          </q-item>
-
-          <q-item clickable v-ripple>
-            <q-item-section avatar>
-              <q-icon name="drafts" />
-            </q-item-section>
-
-            <q-item-section>Drafts</q-item-section>
+            <q-item-section>Help</q-item-section>
           </q-item>
         </q-list>
       </q-scroll-area>
@@ -61,16 +45,18 @@
       <q-img class="absolute-top" src="statics/pantheon.jpg" style="height: 192px">
         <div class="absolute-bottom bg-transparent">
           <q-avatar size="56px" class="q-mb-sm">
-            <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+            <img src="https://avatars2.githubusercontent.com/u/5368644?s=460&v=4" />
           </q-avatar>
-          <div class="text-weight-bold">Razvan Stoenescu</div>
-          <div>@rstoenescu</div>
+          <div class="text-weight-bold">Railson Ramés</div>
+          <div>@railsonrames</div>
         </div>
       </q-img>
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <keep-alive>
+        <router-view />
+      </keep-alive>
     </q-page-container>
   </q-layout>
 </template>
