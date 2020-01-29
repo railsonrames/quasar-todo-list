@@ -6,6 +6,7 @@
         :key="task.title"
         @click="task.done = !task.done"
         clickable
+        :class="{ 'done' : task.done}"
         v-ripple
       >
         <q-item-section avatar>
@@ -45,3 +46,12 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.done {
+  .q-item__label {
+    text-decoration: line-through;
+    color: #bbb;
+  }
+}
+</style>
